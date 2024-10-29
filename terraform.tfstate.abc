@@ -1,0 +1,115 @@
+{
+  "version": 4,
+  "terraform_version": "1.9.8",
+  "serial": 22,
+  "lineage": "4227ef41-f4f9-53ed-cf07-b529a0da2602",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "aks_rg",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "/subscriptions/f157a44f-0634-4559-83d8-60ef6eb8c81c/resourceGroups/var.resource_group_name",
+            "location": "eastus",
+            "managed_by": "",
+            "name": "var.resource_group_name",
+            "tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo1NDAwMDAwMDAwMDAwLCJkZWxldGUiOjU0MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjo1NDAwMDAwMDAwMDAwfX0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_subnet",
+      "name": "aks_subnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_prefixes": [
+              "10.0.1.0/24"
+            ],
+            "default_outbound_access_enabled": true,
+            "delegation": [],
+            "id": "/subscriptions/15854519-b4c5-4847-87c6-969245bad81f/resourceGroups/var.resource_group_name/providers/Microsoft.Network/virtualNetworks/aks-vnet/subnets/aks-subnet",
+            "name": "aks-subnet",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies_enabled": true,
+            "resource_group_name": "var.resource_group_name",
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
+            "timeouts": null,
+            "virtual_network_name": "aks-vnet"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.aks_rg",
+            "azurerm_virtual_network.aks_vnet"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "azurerm_virtual_network",
+      "name": "aks_vnet",
+      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "address_space": [
+              "10.0.0.0/8"
+            ],
+            "bgp_community": "",
+            "ddos_protection_plan": [],
+            "dns_servers": [],
+            "edge_zone": "",
+            "encryption": [],
+            "flow_timeout_in_minutes": 0,
+            "guid": "93f19f9d-1023-461d-869a-cfed4db186b2",
+            "id": "/subscriptions/15854519-b4c5-4847-87c6-969245bad81f/resourceGroups/var.resource_group_name/providers/Microsoft.Network/virtualNetworks/aks-vnet",
+            "location": "eastus",
+            "name": "aks-vnet",
+            "resource_group_name": "var.resource_group_name",
+            "subnet": [
+              {
+                "address_prefixes": [
+                  "10.0.1.0/24"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [],
+                "id": "/subscriptions/15854519-b4c5-4847-87c6-969245bad81f/resourceGroups/var.resource_group_name/providers/Microsoft.Network/virtualNetworks/aks-vnet/subnets/aks-subnet",
+                "name": "aks-subnet",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "",
+                "security_group": "",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              }
+            ],
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "azurerm_resource_group.aks_rg"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
