@@ -1,11 +1,11 @@
 resource "azurerm_resource_group" "aks_rg" {
   name     = var.resource_group_name
-  location = "Central US"
+  location = var.location
 }
 
 # Virtual Network
 resource "azurerm_virtual_network" "aks_vnet" {
-  name                = "aks-vnet"
+  name                = var.virtual_network_name
   address_space       = ["10.0.0.0/8"]
   location            = azurerm_resource_group.aks_rg.location
   resource_group_name = azurerm_resource_group.aks_rg.name
@@ -13,7 +13,7 @@ resource "azurerm_virtual_network" "aks_vnet" {
 
 # Subnet
 resource "azurerm_subnet" "aks_subnet" {
-  name                 = "aks-subnet"
+  name                 = var.aks_subnet_name
   resource_group_name  = azurerm_resource_group.aks_rg.name
   virtual_network_name = azurerm_virtual_network.aks_vnet.name
   address_prefixes     = ["10.0.1.0/24"]
