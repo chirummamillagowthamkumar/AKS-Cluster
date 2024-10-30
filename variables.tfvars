@@ -1,3 +1,7 @@
 resource_group_name="gowtham"
 location="East US"
+virtual_network_name="aks-vnet"
+aks_subnet_name="aks-subnet"
 aks_cluster_name="sample cluster"
+node_pool_name="default"
+vm_size="standard_d4pds_v5"
